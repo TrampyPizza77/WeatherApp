@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <title>Weather App</title>
+      <!-- Header containing all the links to external sources -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <script src="bootstrap-combobox.js"></script>
+
+      <!-- Link to stylesheet -->
+      <link rel="stylesheet" type="text/css" href="css/stylesheet.css" media="screen"/>
+
+      <!-- Link to weather icons and combobox css -->
+      <link rel="stylesheet" href="css/weather-icons.css">
+      <link rel="stylesheet" href="css/weather-icons-wind.css">
+      <link rel="stylesheet" href="css/bootstrap-combobox.css">
+
+      <!-- Meta information -->
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Link to js script -->
+      <script src="scripts.js"></script>
+  </head>
+
+  <body>
+    <!-- Div for forms along the top for user searching -->
+      <div id="forms">
+        <!-- Div for the country abbreivation form -->
+          <div class="form-group" id="formGroupCountry">
+              <label>Select country (by abbreivation)</label>
+              <select id="dropDownCountry" class="comboboxCountry"></select>
+          </div>
+          <!-- Div for the city form -->
+          <div class="form-group" id="formGroupCity" >
+              <label id="selectACity">Select a city</label>
+              <select id="dropDownCity" class="comboboxCity"></select>
+          </div>
+      </div>
+
+      <!-- Div for the grid view used to display all the information -->
+      <div class= "gridDiv">
+          
+          <!-- header of grid contains refresh button and text -->
+          <i id="refresh" class="wi wi-refresh header2" ></i>
+          <h4 id="title" class="header2">Todays Weather</h5>
+
+          <!-- Location of the weather, preset to London   -->
+          <h4 id="location" class="title">London</h5>
+
+
+          <!-- The icon describing the current weather and the current temp for day 0   -->
+          <i id="dayIcon" class="wi wi-na currentTemp " ></i>
+          <h4 id="currentTemp" class="currentTemp">27</h5>
+          
+          <!-- The icons and text for the daily high and low tempretures -->
+          <i id="todayHighIcon" class="wi wi-thermometer highText icon"></i>
+          <h5 id="todayHigh" class="highText">35</h5>
+          <i id="todayLowIcon" class="wi wi-thermometer-exterior lowText icon"></i>
+          <h5 id="todayLow" class="lowText">26</h5>
+
+          <!-- The icons and text for rain chance, wind speed and humidity  -->
+          <i id="rainIcon" class="wi wi-rain textR chanceIcon" ></i>
+          <h5 id="rainChance" class="textR">0% chance</h5>
+          <i id="windIcon" class="wi wi-strong-wind textW chanceIcon" ></i>
+          <h5 id="windspeed" class="textW">11kph</h5>
+          <i id="humidityIcon" class="wi wi-humidity textH chanceIcon"></i>
+          <h5 id="humidity" class="textH">43%</h5>
+
+          <!-- The div's, icons and text for the 1st day following the current day -->
+          <div class="day1Icon iconBackground"></div> 
+          <div class="day1 iconBackground"></div>
+          <div class="day1High iconBackground"></div>
+          <div class="day1Low iconBackground"></div>
+          <h5 id="dayOne" class="day1"></h5>
+          <i id="dayOneIcon" class="wi wi-na day1Icon"></i>
+          <i id="day1High" class="wi wi-thermometer day1High dailyIcon"></i>
+          <h5 id="dayOneHigh" class="highTemp1"></h5>
+          <i id="day1Low" class="wi wi-thermometer-exterior day1Low dailyIcon"></i>
+          <h5 id="dayOneLow" class="lowTemp1"></h5>
+
+          <!-- The div's, icons and text for the 2nd day following the current day -->
+          <div class="day2Icon iconBackground"></div> 
+          <div class="day2 iconBackground"></div>
+          <div class="day2High iconBackground"></div>
+          <div class="day2Low iconBackground"></div>
+          <h5 id="dayTwo" class="day2 iconBackground"></h5>
+          <i id="dayTwoIcon" class="wi wi-na day2Icon"></i>
+          <i id="day2High" class="wi wi-thermometer day2High dailyIcon"></i>
+          <h5 id="dayTwoHigh" class="highTemp2"></h5>
+          <i id="day2Low" class="wi wi-thermometer-exterior day2Low dailyIcon"></i>
+          <h5 id="dayTwoLow" class="lowTemp2"></h5>
+
+          <!-- The div's, icons and text for the 3rd day following the current day -->
+          <div class="day3Icon iconBackground"></div> 
+          <div class="day3 iconBackground"></div>
+          <div class="day3High iconBackground"></div>
+          <div class="day3Low iconBackground"></div>
+          <h5 id="dayThree" class="day3"></h5>
+          <i id="dayThreeIcon" class="wi wi-na day3Icon"></i>
+          <i id="todayHighIcon" class="wi wi-thermometer day3High dailyIcon"></i>
+          <h5 id="dayThreeHigh" class="highTemp3"></h5>
+          <i id="day3Low" class="wi wi-thermometer-exterior day3Low dailyIcon"></i>
+          <h5 id="dayThreeLow" class="lowTemp3"></h5>
+
+          <!-- The div's, icons and text for the 4th day following the current day -->
+          <div class="day4Icon iconBackground"></div> 
+          <div class="day4 iconBackground"></div>
+          <div class="day4High iconBackground"></div>
+          <div class="day4Low iconBackground"></div>
+          <h5 id="dayFour" class="day4"></h5>
+          <i id="dayFourIcon" class="wi wi-na day4Icon"></i>
+          <i id="todayHighIcon" class="wi wi-thermometer day4High dailyIcon"></i>
+          <h5 id="dayFourHigh" class="highTemp4"></h5>
+          <i id="day4Low" class="wi wi-thermometer-exterior day4Low dailyIcon"></i>
+          <h5 id="dayFourLow" class="lowTemp4"></h5>
+
+          <!-- The div's, icons and text for the 5th day following the current day -->
+          <div class="day5Icon iconBackground"></div> 
+          <div class="day5 iconBackground"></div>
+          <div class="day5High iconBackground"></div>
+          <div class="day5Low iconBackground"></div>
+          <h5 id="dayFive" class="day5"></h5>
+          <i id="dayFiveIcon" class="wi wi-na day5Icon"></i>
+          <i id="todayHighIcon" class="wi wi-thermometer day5High dailyIcon"></i>
+          <h5 id="dayFiveHigh" class="highTemp5"></h5>
+          <i id="day5Low" class="wi wi-thermometer-exterior day5Low dailyIcon"></i>
+          <h5 id="dayFiveLow" class="lowTemp5"></h5>
+
+          <!-- The div's, icons and text for the 6th day following the current day -->
+          <div class="day6Icon iconBackground"></div>
+          <div class="day6 iconBackground"></div> 
+          <div class="day6High iconBackground"></div>
+          <div class="day6Low iconBackground"></div>
+          <h5 id="daySix" class="day6"></h5>
+          <i id="daySixIcon" class="wi wi-na day6Icon"></i>
+          <i id="todayHighIcon" class="wi wi-thermometer day6High dailyIcon"></i>
+          <h5 id="daySixHigh" class="highTemp6"></h5>
+          <i id="day6Low" class="wi wi-thermometer-exterior day6Low dailyIcon"></i>
+          <h5 id="daySixLow" class="lowTemp6"></h5>
+
+          <!-- The div's, icons and text for the 7th day following the current day -->
+          <div class="day7Icon iconBackground"></div> 
+          <div class="day7 iconBackground"></div>
+          <div class="day7High iconBackground"></div>
+          <div class="day7Low iconBackground"></div>
+          <h5 id="daySeven" class="day7">Sat</h5>
+          <i id="daySevenIcon" class="wi wi-na day7Icon"></i>
+          <i id="todayHighIcon" class="wi wi-thermometer day7High dailyIcon"></i>
+          <h5 id="daySevenHigh" class="highTemp7"></h5>
+          <i id="day7Low" class="wi wi-thermometer-exterior day7Low dailyIcon"></i>
+          <h5 id="daySevenLow" class="lowTemp7"></h5>
+
+      </div>  
+  </body>
+</html>

@@ -1,0 +1,163 @@
+
+/* Set the font for the dashboard */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+  
+  }
+
+  /* set the classes for the grid view  */
+.header1 { grid-area: header1; }
+.header2 { grid-area: header2; }
+.header { grid-area: header; }
+.title { grid-area: title; }
+.dayIcon { grid-area: dayIcon; }
+.currentTemp { grid-area: currentTemp; }
+.iconR { grid-area: iconR; }
+.textR { grid-area: textR; }
+.iconW { grid-area: iconW; }
+.textW { grid-area: textW; }
+.highIcon { grid-area: highIcon; }
+.highText { grid-area: highText; }
+.lowIcon { grid-area: lowIcon; }
+.lowText { grid-area: lowText; }
+.iconH { grid-area: iconH; }
+.textH { grid-area: textH; }
+.day1 { grid-area: day1; }
+.day2 { grid-area: day2; }
+.day3 { grid-area: day3; }
+.day4 { grid-area: day4; }
+.day5 { grid-area: day5; }
+.day6 { grid-area: day6; }
+.day7 { grid-area: day7; }
+.day1Icon { grid-area: day1Icon; }
+.day2Icon { grid-area: day2Icon; }
+.day3Icon { grid-area: day3Icon; }
+.day4Icon { grid-area: day4Icon; }
+.day5Icon { grid-area: day5Icon; }
+.day6Icon { grid-area: day6Icon; }
+.day7Icon { grid-area: day7Icon; }
+.day1High { grid-area: day1High; }
+.day1Low { grid-area: day1Low; }
+.day2High { grid-area: day2High; }
+.day2Low { grid-area: day2Low; }
+.day3High { grid-area: day3High; }
+.day3Low { grid-area: day3Low; }
+.day4High { grid-area: day4High; }
+.day4Low { grid-area: day4Low; }
+.day5High { grid-area: day5High; }
+.day5Low { grid-area: day5Low; }
+.day6High { grid-area: day6High; }
+.day6Low { grid-area: day6Low; }
+.day7High { grid-area: day7High; }
+.day7Low { grid-area: day7Low; }
+.highTemp1 { grid-area: highTemp1; }
+.lowTemp1 { grid-area: lowTemp1; }
+.highTemp2 { grid-area: highTemp2; }
+.lowTemp2 { grid-area: lowTemp2; }
+.highTemp3 { grid-area: highTemp3; }
+.lowTemp3 { grid-area: lowTemp3; }
+.highTemp4 { grid-area: highTemp4; }
+.lowTemp4 { grid-area: lowTemp4; }
+.highTemp5 { grid-area: highTemp5; }
+.lowTemp5 { grid-area: lowTemp5; }
+.highTemp6 { grid-area: highTemp6; }
+.lowTemp6 { grid-area: lowTemp6; }
+.highTemp7 { grid-area: highTemp7; }
+.lowTemp7 { grid-area: lowTemp7; }
+
+/* created css for the div surrounding all the grid elements */
+/* used grid template areas to create a grid for the ui, also decided on gaps and colour */
+  .gridDiv{
+      display:grid;
+      grid-template-areas:
+      'header1 header1 header1 header1 header1 header2 header2 header2 header2 header header header header header'
+      'title title title title title title title title title title title title title title'
+      'currentTemp currentTemp currentTemp currentTemp currentTemp currentTemp currentTemp currentTemp textR textR textR textR textR textR'
+      'currentTemp currentTemp currentTemp currentTemp currentTemp currentTemp currentTemp currentTemp textW textW textW textW textW textW'
+      'highText highText highText highText lowText lowText lowText lowText textH textH textH textH textH textH'
+      'day1 day1 day2 day2 day3 day3 day4 day4 day5 day5 day6 day6 day7 day7'
+      'day1Icon day1Icon day2Icon day2Icon day3Icon day3Icon day4Icon day4Icon day5Icon day5Icon day6Icon day6Icon day7Icon day7Icon'
+      'day1High day1Low day2High day2Low day3High day3Low day4High day4Low day5High day5Low day6High day6Low day7High day7Low'
+      'highTemp1 lowTemp1 highTemp2 lowTemp2 highTemp3 lowTemp3 highTemp4 lowTemp4 highTemp5 lowTemp5 highTemp6 lowTemp6 highTemp7 lowTemp7';
+
+      grid-gap: 5px 5px;
+      row-gap: 0;
+      background-color: #ffffff;
+      padding: 10px;
+
+
+}
+
+/* created generic styling fo the text within the grid (all h4 & h5) */
+.gridDiv > h5, h4 {
+    background-color: rgba(172, 172, 172, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 100px;
+    padding: 20px 0;
+    font-size: 30px;
+}
+
+/* created generic styling for the icons */
+i {
+    font-size:xx-large;
+    margin:auto;
+
+}
+
+/* created styling for the current day temp icons */
+.icon{
+    font-size:xx-large;
+    position:relative; 
+    right:80px;
+}
+
+/* created styling for the chance of rain icon,windspeed icon and humidity icon */
+.chanceIcon{
+    font-size:xx-large;
+    position:relative; 
+    right:100px;
+    bottom:2px;
+}
+
+/* created styling for the day icon  */
+.dayIcon{
+    font-size:xx-large;
+    position:relative;
+    top:30px;
+}
+
+/* created styling for the background of icons */
+.iconBackground{
+
+    background-color: rgba(172, 172, 172, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 100px;
+    padding: 35px 0;
+    font-size: 30px;
+    row-gap: 0;
+}
+
+/* created styling for the refresh icon  */
+#refresh{
+    font-size:xx-large;
+    position:relative;
+    left:130px;
+    bottom:5px;
+    cursor: pointer
+}
+
+/* created styling for the icons used for daily predictions */
+#dailyIcon{
+    font-size:380%;
+    position:relative;
+    bottom:10px;
+    right:90px;
+}
+
+
+
+
